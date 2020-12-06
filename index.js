@@ -1,8 +1,9 @@
 score=0
+var chalk=require('chalk')
 var readlineSync=require("readline-sync");
-var intro=readlineSync.question("What is your name? ")
+var intro=readlineSync.question(chalk.red.bold("What is your name? "))
 console.log("Hello "+intro)
-console.log("Do You know Varun? Lets see how well you know Him.")
+console.log(chalk.blue.bold("Do You know Varun? Lets see how well you know Him."))
 var confirm=readlineSync.question("Are you Ready? ")
 if(confirm.toLowerCase()==="yes"){
   console.log("Let The Game Begin")
@@ -21,7 +22,7 @@ if(confirm.toLowerCase()==="yes"){
 }
 
 var questionOne={
-  question: "Where Do Varun Live? ",
+  question:"Where Do Varun Live? ",
   answer: "Hyderabad"
 }
 var questionTwo={
@@ -55,14 +56,14 @@ for(var i=0;i<questions.length;i++){
 
 if(score==6)
 {
-  console.log("You know him very well")
+  console.log(chalk.blue.bold("You know him very well"))
 }
 if(score<=5) {
-  console.log("Score is "+ score)
+  console.log(chalk.yellow.bold("Score is "+ score))
   console.log("Thanks For participating in this quiz")
 }
 }
 else
 {
-  console.log("Bye Then!")
+  console.log(chalk.underline.bgBlue("Bye Then!"))
 }
